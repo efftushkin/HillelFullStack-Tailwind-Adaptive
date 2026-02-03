@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Світ Кави</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Slider styles - CSS only */
+        .slider {
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .slider img {
+            scroll-snap-align: start;
+        }
+        
+        /* Accordion styles - CSS only using details/summary */
+        details summary {
+            cursor: pointer;
+            user-select: none;
+        }
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        /* Dropdown menu - CSS only using hover */
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        
+        /* Smooth scrolling for slider */
+        .slider {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-amber-50 text-gray-800">
+    
+    <!-- HEADER -->
+    <header class="bg-gradient-to-r from-amber-800 to-amber-900 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <h1 class="text-3xl md:text-4xl font-bold text-center mb-4">☕ Світ Кави</h1>
+            
+            <!-- Two-level menu -->
+            <nav class="flex flex-wrap justify-center gap-1 md:gap-2">
+                <div class="dropdown relative">
+                    <a href="#" class="px-4 py-2 bg-amber-700 hover:bg-amber-600 rounded transition block">
+                        Про каву
+                    </a>
+                    <div class="dropdown-menu hidden absolute left-0 mt-1 bg-white text-gray-800 rounded shadow-lg z-10 min-w-[200px]">
+                        <a href="#history" class="block px-4 py-2 hover:bg-amber-100">Історія</a>
+                        <a href="#varieties" class="block px-4 py-2 hover:bg-amber-100">Сорти кави</a>
+                        <a href="#benefits" class="block px-4 py-2 hover:bg-amber-100">Користь</a>
+                    </div>
+                </div>
+                
+                <div class="dropdown relative">
+                    <a href="#" class="px-4 py-2 bg-amber-700 hover:bg-amber-600 rounded transition block">
+                        Приготування
+                    </a>
+                    <div class="dropdown-menu hidden absolute left-0 mt-1 bg-white text-gray-800 rounded shadow-lg z-10 min-w-[200px]">
+                        <a href="#espresso" class="block px-4 py-2 hover:bg-amber-100">Еспресо</a>
+                        <a href="#filter" class="block px-4 py-2 hover:bg-amber-100">Фільтр-кава</a>
+                        <a href="#turkish" class="block px-4 py-2 hover:bg-amber-100">Турецька кава</a>
+                        <a href="#cold-brew" class="block px-4 py-2 hover:bg-amber-100">Колд брю</a>
+                    </div>
+                </div>
+                
+                <div class="dropdown relative">
+                    <a href="#" class="px-4 py-2 bg-amber-700 hover:bg-amber-600 rounded transition block">
+                        Обладнання
+                    </a>
+                    <div class="dropdown-menu hidden absolute left-0 mt-1 bg-white text-gray-800 rounded shadow-lg z-10 min-w-[200px]">
+                        <a href="#machines" class="block px-4 py-2 hover:bg-amber-100">Кавомашини</a>
+                        <a href="#grinders" class="block px-4 py-2 hover:bg-amber-100">Кавомолки</a>
+                        <a href="#accessories" class="block px-4 py-2 hover:bg-amber-100">Аксесуари</a>
+                    </div>
+                </div>
+                
+                <a href="#poll" class="px-4 py-2 bg-amber-700 hover:bg-amber-600 rounded transition">Опитування</a>
+                <a href="#contact" class="px-4 py-2 bg-amber-700 hover:bg-amber-600 rounded transition">Контакти</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN GRID CONTAINER -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Grid: 3 columns on xl, 2 columns on md, 1 column on mobile -->
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-12 gap-6">
+            
+            <!-- LEFT COLUMN - Slider -->
+            <aside class="xl:col-span-3 md:order-1 order-2">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h2 class="text-2xl font-bold text-amber-800 mb-4">Посуд для кави</h2>
+                    
+                    <!-- CSS-only Slider -->
+                    <div class="relative overflow-hidden">
+                        <div class="slider flex overflow-x-auto gap-4 pb-4" style="scroll-snap-type: x mandatory;">
+                            <!-- Slide 1 -->
+                            <div class="flex-shrink-0 w-full" style="scroll-snap-align: start;">
+                                <img src="./img/jezva.jpg" 
+                                     alt="Турка для кави" 
+                                     class="w-full h-80 object-cover rounded-lg shadow-md">
+                                <p class="text-center mt-2 font-semibold text-amber-900">Турка (Джезва)</p>
+                                <p class="text-sm text-gray-600 text-center">Традиційний посуд для варіння кави</p>
+                            </div>
+                            
+                            <!-- Slide 2 -->
+                            <div class="flex-shrink-0 w-full" style="scroll-snap-align: start;">
+                                <img src="./img/press.jpg" 
+                                     alt="Френч-прес" 
+                                     class="w-full h-80 object-cover rounded-lg shadow-md">
+                                <p class="text-center mt-2 font-semibold text-amber-900">Френч-прес</p>
+                                <p class="text-sm text-gray-600 text-center">Простий спосіб заварювання</p>
+                            </div>
+                            
+                            <!-- Slide 3 -->
+                            <div class="flex-shrink-0 w-full" style="scroll-snap-align: start;">
+                                <img src="./img/express.jpg" 
+                                     alt="Кавомашина" 
+                                     class="w-full h-80 object-cover rounded-lg shadow-md">
+                                <p class="text-center mt-2 font-semibold text-amber-900">Еспресо-машина</p>
+                                <p class="text-sm text-gray-600 text-center">Професійне приготування</p>
+                            </div>
+                            
+                            <!-- Slide 4 -->
+                            <div class="flex-shrink-0 w-full" style="scroll-snap-align: start;">
+                                <img src="./img/moka.jpg"
+                                     alt="Мока" 
+                                     class="w-full h-80 object-cover rounded-lg shadow-md">
+                                <p class="text-center mt-2 font-semibold text-amber-900">Мока (Гейзерна кавоварка)</p>
+                                <p class="text-sm text-gray-600 text-center">Італійська класика</p>
+                            </div>
+                            
+                            <!-- Slide 5 -->
+                            <div class="flex-shrink-0 w-full" style="scroll-snap-align: start;">
+                                <img src="./img/kemeks.jpg" 
+                                     alt="Кемекс" 
+                                     class="w-full h-80 object-cover rounded-lg shadow-md">
+                                <p class="text-center mt-2 font-semibold text-amber-900">Кемекс</p>
+                                <p class="text-sm text-gray-600 text-center">Елегантний дизайн</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- MAIN COLUMN - Accordion -->
+            <main class="xl:col-span-6 md:col-span-2 md:order-2 order-1">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h2 class="text-3xl font-bold text-amber-800 mb-6 text-center">Все про каву</h2>
+
+                    <!-- Accordion using details/summary -->
+                    <div class="space-y-4">
+
+                        <!-- Accordion Item 1 -->
+                        <details class="group bg-amber-50 rounded-lg overflow-hidden border-2 border-amber-200" open>
+                            <summary class="flex justify-between items-center p-4 bg-amber-100 hover:bg-amber-200 transition font-semibold text-lg text-amber-900">
+                                <span>📜 Історія кавоваріння</span>
+                                <span class="transform group-open:rotate-180 transition-transform">▼</span>
+                            </summary>
+                            <div class="p-4 text-gray-700 leading-relaxed">
+                                <p class="mb-3">Легенда розповідає, що кава була відкрита в Ефіопії у IX столітті пастухом на ім'я Калді, який помітив, що його кози стають більш енергійними після поїдання ягід кавового дерева.</p>
+                                <p class="mb-3">У XV столітті кава поширилася на Аравійський півострів, де в Ємені почали культивувати кавові дерева. Перші кав'ярні з'явилися в Мецці та Медині.</p>
+                                <p>До Європи кава потрапила у XVII столітті через венеціанських торговців. Перша кав'ярня в Європі відкрилася у Венеції в 1645 році.</p>
+                            </div>
+                        </details>
+
+                        <!-- Accordion Item 2 -->
+                        <details class="group bg-amber-50 rounded-lg overflow-hidden border-2 border-amber-200">
+                            <summary class="flex justify-between items-center p-4 bg-amber-100 hover:bg-amber-200 transition font-semibold text-lg text-amber-900">
+                                <span>🌱 Основні сорти кави</span>
+                                <span class="transform group-open:rotate-180 transition-transform">▼</span>
+                            </summary>
+                            <div class="p-4 text-gray-700 leading-relaxed">
+                                <div class="space-y-3">
+                                    <div>
+                                        <h4 class="font-bold text-amber-800">Арабіка (Coffea arabica)</h4>
+                                        <p>Найпопулярніший сорт, становить близько 70% світового виробництва. Має м'який, витончений смак з легкою кислинкою. Росте на висоті 600-2000 метрів.</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-amber-800">Робуста (Coffea canephora)</h4>
+                                        <p>Міцніша та більш гірка кава з вищим вмістом кофеїну. Становить близько 30% світового виробництва. Використовується в еспресо-сумішах для кращої крема.</p>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-amber-800">Ліберика та Ексцельза</h4>
+                                        <p>Рідкісні сорти, що становлять менше 2% світового ринку. Мають унікальні смакові профілі.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- Accordion Item 3 -->
+                        <details class="group bg-amber-50 rounded-lg overflow-hidden border-2 border-amber-200">
+                            <summary class="flex justify-between items-center p-4 bg-amber-100 hover:bg-amber-200 transition font-semibold text-lg text-amber-900">
+                                <span>☕ Варіанти приготування кави</span>
+                                <span class="transform group-open:rotate-180 transition-transform">▼</span>
+                            </summary>
+                            <div class="p-4 text-gray-700 leading-relaxed">
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="bg-white p-3 rounded border border-amber-200">
+                                        <h4 class="font-bold text-amber-800 mb-2">Еспресо</h4>
+                                        <p class="text-sm">Концентрований напій, приготований під високим тиском. Основа для капучино, лате та інших напоїв.</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded border border-amber-200">
+                                        <h4 class="font-bold text-amber-800 mb-2">Американо</h4>
+                                        <p class="text-sm">Еспресо, розбавлений гарячою водою. М'який смак, схожий на фільтр-каву.</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded border border-amber-200">
+                                        <h4 class="font-bold text-amber-800 mb-2">Капучино</h4>
+                                        <p class="text-sm">Еспресо з молоком та молочною піною в пропорції 1:1:1.</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded border border-amber-200">
+                                        <h4 class="font-bold text-amber-800 mb-2">Лате</h4>
+                                        <p class="text-sm">Еспресо з великою кількістю молока та тонким шаром піни.</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded border border-amber-200">
+                                        <h4 class="font-bold text-amber-800 mb-2">Турецька кава</h4>
+                                        <p class="text-sm">Кава дрібного помелу, зварена в турці з цукром або без.</p>
+                                    </div>
+                                    <div class="bg-white p-3 rounded border border-amber-200">
+                                        <h4 class="font-bold text-amber-800 mb-2">Колд брю</h4>
+                                        <p class="text-sm">Кава холодного заварювання протягом 12-24 годин. М'який, солодкуватий смак.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+
+                        <!-- Accordion Item 4 -->
+                        <details class="group bg-amber-50 rounded-lg overflow-hidden border-2 border-amber-200">
+                            <summary class="flex justify-between items-center p-4 bg-amber-100 hover:bg-amber-200 transition font-semibold text-lg text-amber-900">
+                                <span>🔬 Хімічний склад та користь</span>
+                                <span class="transform group-open:rotate-180 transition-transform">▼</span>
+                            </summary>
+                            <div class="p-4 text-gray-700 leading-relaxed">
+                                <p class="mb-3">Кава містить понад 1000 хімічних сполук, включаючи кофеїн, антиоксиданти, вітаміни та мінерали.</p>
+                                <ul class="list-disc list-inside space-y-2 mb-3">
+                                    <li>Підвищує концентрацію та пильність</li>
+                                    <li>Містить антиоксиданти, що захищають клітини</li>
+                                    <li>Може знижувати ризик деяких захворювань</li>
+                                    <li>Покращує фізичну продуктивність</li>
+                                    <li>Підтримує метаболізм</li>
+                                </ul>
+                                <p class="text-sm text-amber-800 font-semibold">Рекомендована доза: 3-4 чашки на день (до 400 мг кофеїну)</p>
+                            </div>
+                        </details>
+
+                        <!-- Accordion Item 5 -->
+                        <details class="group bg-amber-50 rounded-lg overflow-hidden border-2 border-amber-200">
+                            <summary class="flex justify-between items-center p-4 bg-amber-100 hover:bg-amber-200 transition font-semibold text-lg text-amber-900">
+                                <span>🎨 Мистецтво латте-арт</span>
+                                <span class="transform group-open:rotate-180 transition-transform">▼</span>
+                            </summary>
+                            <div class="p-4 text-gray-700 leading-relaxed">
+                                <p class="mb-3">Латте-арт — це мистецтво створення візерунків на поверхні кавових напоїв за допомогою молочної піни.</p>
+                                <p class="mb-3">Основні техніки включають вільне наливання (free pour) та етчинг (малювання інструментами).</p>
+                                <p>Популярні візерунки: серце, розетта, тюльпан, лебідь. Для створення латте-арт потрібна правильно збита молочна піна та якісний еспресо.</p>
+                            </div>
+                        </details>
+
+                    </div>
+                </div>
+            </main>
+
+            <!-- RIGHT COLUMN - Survey Form -->
+            <aside class="xl:col-span-3 md:order-3 order-3">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h2 class="text-2xl font-bold text-amber-800 mb-4">Опитування про каву</h2>
+                    <p class="text-gray-600 mb-6 text-sm">Поділіться своїми уподобаннями!</p>
+
+                    <form class="space-y-4" id="poll">
+
+                        <!-- Name field -->
+                        <div>
+                            <label for="name" class="block text-sm font-semibold text-gray-700 mb-1">Ваше ім'я:</label>
+                            <input type="text" id="name" name="name"
+                                   class="w-full px-3 py-2 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                                   placeholder="Введіть ім'я">
+                        </div>
+
+                        <!-- Email field -->
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-gray-700 mb-1">Email:</label>
+                            <input type="email" id="email" name="email"
+                                   class="w-full px-3 py-2 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                                   placeholder="your@email.com">
+                        </div>
+
+                        <!-- Coffee type preference -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Улюблений сорт кави:</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="radio" name="coffee-type" value="arabica" class="mr-2 text-amber-600">
+                                    <span class="text-sm">Арабіка</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="coffee-type" value="robusta" class="mr-2 text-amber-600">
+                                    <span class="text-sm">Робуста</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="coffee-type" value="blend" class="mr-2 text-amber-600">
+                                    <span class="text-sm">Суміш</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Roast level -->
+                        <div>
+                            <label for="roast" class="block text-sm font-semibold text-gray-700 mb-1">Ступінь обсмаження:</label>
+                            <select id="roast" name="roast"
+                                    class="w-full px-3 py-2 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                                <option value="">Оберіть...</option>
+                                <option value="light">Світле обсмаження</option>
+                                <option value="medium">Середнє обсмаження</option>
+                                <option value="dark">Темне обсмаження</option>
+                            </select>
+                        </div>
+
+                        <!-- Preparation methods -->
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Улюблені способи приготування:</label>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="method" value="espresso" class="mr-2 text-amber-600">
+                                    <span class="text-sm">Еспресо</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="method" value="filter" class="mr-2 text-amber-600">
+                                    <span class="text-sm">Фільтр-кава</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="method" value="turkish" class="mr-2 text-amber-600">
+                                    <span class="text-sm">Турецька кава</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="method" value="french-press" class="mr-2 text-amber-600">
+                                    <span class="text-sm">Френч-прес</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Coffee brands -->
+                        <div>
+                            <label for="brand" class="block text-sm font-semibold text-gray-700 mb-1">Улюблений виробник:</label>
+                            <input type="text" id="brand" name="brand"
+                                   class="w-full px-3 py-2 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                                   placeholder="Назва бренду">
+                        </div>
+
+                        <!-- Daily consumption -->
+                        <div>
+                            <label for="cups" class="block text-sm font-semibold text-gray-700 mb-1">Чашок кави на день:</label>
+                            <input type="number" id="cups" name="cups" min="0" max="10"
+                                   class="w-full px-3 py-2 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                                   placeholder="0">
+                        </div>
+
+                        <!-- Comments -->
+                        <div>
+                            <label for="comments" class="block text-sm font-semibold text-gray-700 mb-1">Коментарі:</label>
+                            <textarea id="comments" name="comments" rows="3"
+                                      class="w-full px-3 py-2 border border-amber-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                                      placeholder="Ваші думки про каву..."></textarea>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="flex gap-2 pt-2">
+                            <button type="submit"
+                                    class="flex-1 bg-amber-700 hover:bg-amber-800 text-white font-semibold py-2 px-4 rounded-lg transition">
+                                Надіслати
+                            </button>
+                            <button type="reset"
+                                    class="flex-1 bg-gray-400 hover:bg-gray-500 text-white font-semibold py-2 px-4 rounded-lg transition">
+                                Очистити
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-gradient-to-r from-amber-900 to-amber-800 text-white mt-12" id="contact">
+        <div class="container mx-auto px-4 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Контактна інформація</h3>
+                    <div class="space-y-2 text-amber-100">
+                        <p>📍 вул. Кавова, 42, Київ, Україна</p>
+                        <p>📞 +380 (44) 123-45-67</p>
+                        <p>✉️ info@coffeeworld.ua</p>
+                        <p>🕐 Пн-Пт: 8:00 - 20:00</p>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Корисні посилання</h3>
+                    <ul class="space-y-2 text-amber-100">
+                        <li><a href="#" class="hover:text-white transition">Про нас</a></li>
+                        <li><a href="#" class="hover:text-white transition">Блог про каву</a></li>
+                        <li><a href="#" class="hover:text-white transition">Рецепти</a></li>
+                        <li><a href="#" class="hover:text-white transition">Магазин</a></li>
+                        <li><a href="#" class="hover:text-white transition">Доставка</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Ми в соцмережах</h3>
+                    <div class="flex gap-4 mb-4">
+                        <a href="#" class="bg-amber-700 hover:bg-amber-600 w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <span class="text-xl">f</span>
+                        </a>
+                        <a href="#" class="bg-amber-700 hover:bg-amber-600 w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <span class="text-xl">𝕏</span>
+                        </a>
+                        <a href="#" class="bg-amber-700 hover:bg-amber-600 w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <span class="text-xl">in</span>
+                        </a>
+                        <a href="#" class="bg-amber-700 hover:bg-amber-600 w-10 h-10 rounded-full flex items-center justify-center transition">
+                            <span class="text-xl">📷</span>
+                        </a>
+                    </div>
+                    <p class="text-amber-100 text-sm">Підпишіться на наші новини та отримуйте ексклюзивні пропозиції!</p>
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-amber-700 mt-8 pt-6 text-center text-amber-200">
+                <p>&copy; 2026 Світ Кави. Всі права захищені.</p>
+                <p class="text-sm mt-2">Створено з ❤️ та ☕</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
